@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="example">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="jar://C:/Program Files/Java/External package/joda-time-2.4-dist.zip!/joda-time-2.4/src/example" />
+      <root url="jar://C:/Program Files/Java/External package/joda-time-2.4-dist.zip!/joda-time-2.4/src/main/java" />
+      <root url="jar://C:/Program Files/Java/External package/joda-time-2.4-dist.zip!/joda-time-2.4/src/test/java" />
+    </SOURCES>
+  </library>
+</component>
