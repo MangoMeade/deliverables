@@ -28,7 +28,7 @@ public class Main {
         
         Period dateDifference = Period.between(startDate, endDate); //calculate date difference
 
-        if (dateDifference.getYears() < 0) { //if the year value of startDate is higher thatn the year value of endDate run this
+        if (dateDifference.getYears() < 0) { //if the year value of startDate is higher than the year value of endDate run this
             System.out.println("endYear variable has to be higher than startYear variable");
         }
         else {
