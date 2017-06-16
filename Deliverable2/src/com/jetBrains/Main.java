@@ -1,11 +1,8 @@
 package com.jetBrains;
 
 import java.util.Scanner;
-import org.joda.time.DateTime;
-import org.joda.time.Years;
-import org.joda.time.Months;
-import org.joda.time.Days;
-
+import java.time.LocalDate;
+import java.time.Period;
 
 public class Main {
 
@@ -17,10 +14,6 @@ public class Main {
         int endYear = 0;
         int endMonth = 0;
         int endDay = 0;
-        int yearDiff = 0;
-        int monthDiff = 0;
-        int dayDiff = 0;
-        int dateDiffMonth = 0;
 
         System.out.println("Write two dates to calculate their difference in years, months and days. Format(startYear, startMonth, startDay, endYear,endMonth, endDay)");
         startYear = scnr.nextInt();
@@ -30,19 +23,16 @@ public class Main {
         endMonth = scnr.nextInt();
         endDay = scnr.nextInt();
 
-        DateTime start = new DateTime().withDate(startYear, startMonth, startDay);
-        DateTime end = new DateTime().withDate(endYear, endMonth, endDay);
+        LocalDate endDate = LocalDate.of(endYear, endMonth, endDay);
+        LocalDate startDate = LocalDate.of(startYear, startMonth, startDay);
 
-        yearDiff = Years.yearsBetween(start.toLocalDate(), end.toLocalDate()).getYears();
-        monthDiff = Months.monthsBetween(start.toLocalDate(), end.toLocalDate()).getMonths();
-        dayDiff = Days.daysBetween(start.toLocalDate(), end.toLocalDate()).getDays();
+        Period dateDifference = Period.between(startDate, endDate);
 
-        dateDiffMonth = monthDiff - (yearDiff * 12);
-
-
-        System.out.println("Year difference: " + yearDiff);
-        System.out.println("Month difference: " + monthDiff);
-        System.out.println("Day difference: " + dayDiff);
-        System.out.println("Year + Month difference: " + yearDiff + "/" + dateDiffMonth);
+        if (dateDifference.getYears() < 0) {
+            System.out.println("endYear variable has to be higher than startYear variable");
+        }
+        else {
+            System.out.println("Date difference is: " + dateDifference.getYears() + "/" + dateDifference.getMonths() + "/" + dateDifference.getDays() + " in Years/Months/Days");
+        }
     }
 }
