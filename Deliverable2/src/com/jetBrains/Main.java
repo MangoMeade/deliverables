@@ -22,13 +22,13 @@ public class Main {
         endYear = scnr.nextInt();
         endMonth = scnr.nextInt();
         endDay = scnr.nextInt();
+        
+        LocalDate startDate = LocalDate.of(startYear, startMonth, startDay); //stores startDate values
+        LocalDate endDate = LocalDate.of(endYear, endMonth, endDay); //stores endDate values
+        
+        Period dateDifference = Period.between(startDate, endDate); //calculate date difference
 
-        LocalDate endDate = LocalDate.of(endYear, endMonth, endDay);
-        LocalDate startDate = LocalDate.of(startYear, startMonth, startDay);
-
-        Period dateDifference = Period.between(startDate, endDate);
-
-        if (dateDifference.getYears() < 0) {
+        if (dateDifference.getYears() < 0) { //if the year value of startDate is higher thatn the year value of endDate run this
             System.out.println("endYear variable has to be higher than startYear variable");
         }
         else {
